@@ -1,5 +1,7 @@
 "use strict"
 function getArrayParams(...arr) {
+
+  return { min: min, max: max, avg: avg };
   let min = arr[0];
   let max = arr[0];
   let sum = 0;
@@ -15,7 +17,9 @@ function getArrayParams(...arr) {
   const avg = +(sum / arr.length).toFixed(2);
   return { min: min, max: max, avg: avg};
 }
+
 function summElementsWorker(...arr) {
+
   if (arr.length === 0) {
     return 0;
   }
@@ -25,7 +29,9 @@ function summElementsWorker(...arr) {
   }
   return sum;
 }
+
 function differenceMaxMinWorker(...arr) {
+
   if (arr.length === 0) {
     return 0;
   }
@@ -41,7 +47,9 @@ function differenceMaxMinWorker(...arr) {
   }
   return max - min;
 }
+
 function differenceEvenOddWorker(...arr) {
+
   if (arr.length === 0) {
     return 0;
   }
@@ -56,7 +64,9 @@ function differenceEvenOddWorker(...arr) {
   }
   return sumEvenElement - sumOddElement;
 }
+
 function averageEvenElementsWorker(...arr) {
+
   if (arr.length === 0) {
     return 0;
   }
@@ -75,6 +85,8 @@ function averageEvenElementsWorker(...arr) {
   }
 }
 
+function makeWork (arrOfArr, func) {
+
 function makeWork(arrOfArr, func) {
   let maxWorkerResult = -Infinity; // начальное значение
   for (let i = 0; i < arrOfArr.length; i++) {
@@ -85,7 +97,4 @@ function makeWork(arrOfArr, func) {
     }
   }
   return maxWorkerResult;
-<<<<<<< HEAD
 }
-
->>>>>>> 6a168f6f1d41d2c760391731076e3096fe1f08b9
