@@ -1,24 +1,17 @@
-function getArrayParams(...arr) {
 
-  return { min: min, max: max, avg: avg };
-}
+function makeWork(arrOfArr, func) {
+  let maxWorkerResult = -Infinity; // начальное значение
 
-function summElementsWorker(...arr) {
+  for (let i = 0; i < arrOfArr.length; i++) {
+    const workerResult = func(...arrOfArr[i]);
+    if (workerResult > maxWorkerResult) {
+      maxWorkerResult = workerResult;
+    const currentArr = arrOfArr[i];
+    const currentResult = func(...currentArr); // результат насадки
+    if (currentResult > maxWorkerResult) {
+      maxWorkerResult = currentResult; // перезаписываем максимум
+    }
+    }
 
-}
-
-function differenceMaxMinWorker(...arr) {
-
-}
-
-function differenceEvenOddWorker(...arr) {
-
-}
-
-function averageEvenElementsWorker(...arr) {
-
-}
-
-function makeWork (arrOfArr, func) {
-
+  }
 }
